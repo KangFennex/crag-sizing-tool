@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import "./Styles.scss";
+import "./SizeTableStandard.scss";
 import { getSizingSpecifications, getKidSizing, standardSizeCategories, kidSizeCategories } from "../assets/SizingData";
 
 function SizeTableStandard({ kid, size, gender, garment }) {
@@ -40,7 +40,7 @@ function SizeTableStandard({ kid, size, gender, garment }) {
   const chartTitle = (gender, kid) => {
     if (kid) {
       return "Kid"
-    } else if (gender === "men" ) {
+    } else if (gender === "men") {
       return "Men"
     } else return "Women"
   }
@@ -54,11 +54,25 @@ function SizeTableStandard({ kid, size, gender, garment }) {
     ));
   };
 
+  const getExpandedClass = (kid, gender, garment) => {
+    if (kid) {
+      return "expanded";
+    } else if (gender === "women" && !garment) {
+      return "expanded";
+    } else if (gender === "women" && garment) {
+      return "expanded";
+    } else if (gender === "men" && garment) {
+      return "expanded"; 
+    } else {
+      return "";
+    }
+  };
+
   return (
-    <div className={`size-table-container selectedTab2 ${gender === "women" || garment || kid ? "expandedTab2" : ""}`}>
+    <div className={`size-table-container-tab2 ${getExpandedClass(kid, gender, garment)}`}>
       <div>
-      <h4>{chartTitle(gender, kid)} Sizing Chart</h4>
-        <table className={"size-table-container__table"}>
+        <h4>{chartTitle(gender, kid)} Sizing Chart</h4>
+        <table className={"size-table-container-tab2__table"}>
           <thead>
             <tr className="first-row">
               <th>Measure</th>

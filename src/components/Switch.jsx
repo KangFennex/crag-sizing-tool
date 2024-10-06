@@ -18,7 +18,7 @@ const iconMap = {
     child: TbMoodKid,
 };
 
-const ToggleSwitch = ({ isChecked, handleToggle, icon1, icon2 }) => {
+const ToggleSwitch = ({ isChecked, handleToggle, icon1, icon2, disabled }) => {
 
     const Icon1 = iconMap[icon1];
     const Icon2 = iconMap[icon2];
@@ -33,8 +33,9 @@ const ToggleSwitch = ({ isChecked, handleToggle, icon1, icon2 }) => {
                         id="checkbox"
                         checked={isChecked}
                         onChange={handleToggle}
+                        disabled={disabled}
                     />
-                    <span className="slider"></span>
+                    <span className={`slider ${disabled ? "disabled" : ""}`}></span>
                 </label>
             </div>
             {Icon1 && <Icon2 size={25} color={isChecked ? "darkturquoise" : ""}/>} 

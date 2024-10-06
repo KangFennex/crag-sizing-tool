@@ -42,6 +42,10 @@ function App() {
   const setRegion = useStore((state) => state.setRegion);
 
   const handleSetSelectedTab = (tab) => {
+    if (tab === 0) {
+      setKid(false)
+      setSelectedTab(tab);
+    }
     setSelectedTab(tab);
   }
 
@@ -66,7 +70,9 @@ function App() {
   }
 
   const handleSetKid = () => {
-    setKid(!kid)
+    setKid(!kid);
+    setGender("men");
+    setGarment(false);
   }
 
 

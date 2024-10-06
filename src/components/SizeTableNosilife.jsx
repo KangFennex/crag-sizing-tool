@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import "./Styles.scss";
+import "./SizeTableNosilife.scss";
 import { nosilifeWomenSizing, nosilifeMenSizing, nosilifeSizeCategories } from "../assets/SizingData"
 
 
@@ -12,7 +12,7 @@ const renderCategories = (categories, sizes) => {
     ));
 };
 
-function SizeTableNosilife({ gender, size, selectedTab }) {
+function SizeTableNosilife({ gender, size }) {
     const selectCategories = (g) => {
         if (g === "men") {
             return nosilifeSizeCategories("men");
@@ -34,10 +34,10 @@ function SizeTableNosilife({ gender, size, selectedTab }) {
     };
 
     return (
-        <div className={`size-table-container selectedTab1 ${gender === "women" ? "expandedTab1" : ""}`}>
+        <div className={`size-table-container-tab1 ${gender === "women" ? "expanded" : ""}`}>
             <div>
                 <h4>{gender === "men" ? "Men" : "Women"} Sizing Chart</h4>
-                <table className="size-table-container__table">
+                <table className="size-table-container-tab1__table">
                     <thead>
                         <tr className="first-row">
                             <th scope="col">Measure</th>

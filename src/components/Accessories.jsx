@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import "./Styles.scss";
+import "./Accessories.scss";
 
 const SizingTable = ({ rows }) => {
   return (
-    <div className="mt-2 mb-8 bg-white rounded-md p-4">
+    <div className="size-table-container-tab4 ">
       <table className="min-w-full">
         <tbody>
           {rows.map((row, index) => (
@@ -39,7 +39,7 @@ const Accessories = () => {
   ];
 
   return (
-    <div className="mx-auto p-4">
+    <div className="accessories-tables">
         <SizingTable title="Adult Hat Size" rows={hatSizeAdult} />
         <SizingTable title="Kids Hat Size" rows={hatSizeKids} />
         <SizingTable title="Glove Size" rows={gloveSize} />

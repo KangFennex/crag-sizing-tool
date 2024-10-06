@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import "./Styles.scss";
+import "./BreakdownByStyle.scss";
 import styles from "../assets/styles";
 import { Autocomplete, AutocompleteItem } from "@nextui-org/react";
 import { useState } from 'react';
@@ -53,16 +53,18 @@ const StylesDropdown = ({ styleOptions, handleSelect }) => {
 
 function BreakdownByStyle() {
     const [selectedStyle, setSelectedStyle] = useState('');
+
     const handleRefresh = () => {
         setSelectedStyle('');
     }
+
     const handleSelect = (selectedId) => {
         const selectedStyle = styles.find((style) => style.id === selectedId)
         setSelectedStyle(selectedStyle || null);
     };
 
     return (
-        <div className={`size-table-container selectedTab3 ${selectedStyle ? "expandedTab3" : ""}`}>
+        <div className={`size-table-container-tab3 ${selectedStyle ? "expanded" : ""}`}>
             <div>
                 <section>
                     <div>
@@ -76,7 +78,7 @@ function BreakdownByStyle() {
                         </div>
                         {selectedStyle && (
                             <div>
-                                <table className="size-table-container__table">
+                                <table className="size-table-container-tab3__table">
                                     <thead>
                                         <tr className="first-row">
                                             <th scope="col">Feature</th>

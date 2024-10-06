@@ -12,7 +12,7 @@ const renderCategories = (categories, sizes) => {
     ));
 };
 
-function SizeTableNosilife({ gender, size }) {
+function SizeTableNosilife({ gender, size, selectedTab }) {
     const selectCategories = (g) => {
         if (g === "men") {
             return nosilifeSizeCategories("men");
@@ -34,7 +34,7 @@ function SizeTableNosilife({ gender, size }) {
     };
 
     return (
-        <div className="size-table-container">
+        <div className={`size-table-container selectedTab1 ${gender === "women" ? "expandedTab1" : ""}`}>
             <div>
                 <h4>{gender === "men" ? "Men" : "Women"} Sizing Chart</h4>
                 <table className="size-table-container__table">

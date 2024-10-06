@@ -94,17 +94,18 @@ function App() {
         </div>
       </div>
       <section className='card-container'>
-        <nav 
-        className="card">
+        <nav
+          className={`card ${gender === "women" ? "expanded" : ""}`}
+          >
           <div className="card__header">
             <img
               alt="Craghoppers logo"
               className="card__header__logo"
               src={logo}
             />
-                      <div>
-            <p className="card__title">{tabs[selectedTab].title}</p>
-          </div>
+            <div>
+              <p className="card__title">{tabs[selectedTab].title}</p>
+            </div>
           </div>
 
           <Divider />
@@ -113,11 +114,12 @@ function App() {
             gender={gender}
             region={region}
             kid={kid}
+            garment={garment}
             handleSetGender={handleSetGender}
             handleSetRegion={handleSetRegion}
             handleSetGarment={handleSetGarment}
             handleSetKid={handleSetKid}
-            />
+          />
           <div>
             {selectedTab === 0 && (
               <NosilifeSizing
@@ -125,6 +127,7 @@ function App() {
                 gender={gender}
                 region={region}
                 handleSizeSelection={handleSizeSelection}
+                selectedTab={selectedTab}
               />
             )}
             {selectedTab === 1 && (
@@ -135,6 +138,7 @@ function App() {
                 garment={garment}
                 size={size}
                 handleSizeSelection={handleSizeSelection}
+                selectedTab={selectedTab}
               />
             )}
             {selectedTab === 2 && (

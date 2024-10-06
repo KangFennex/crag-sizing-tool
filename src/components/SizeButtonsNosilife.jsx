@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Button } from "@nextui-org/react";
+import { sizeNosilifeWomen, sizeNosilifeMen } from "../assets/SizingData"
 
 const renderSizeButtons = (sizes, handleSizeSelectionWithState, selectedSize) => {
     return sizes.map((sizeEl, i) => (
@@ -16,10 +17,6 @@ const renderSizeButtons = (sizes, handleSizeSelectionWithState, selectedSize) =>
 
 const SizingSelect = ({ gender, handleSizeSelectionWithState, selectedSize }) => {
 
-    const sizeNosilifeWomen = ["16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "32", "34", "36", "38", "40", "42", "44", "46", "48", "50", "52", "64", "68", "72", "76", "80", "84", "88", "92", "96", "100", "104"];
-
-    const sizeNosilifeMen = ["23", "24", "25", "26", "27", "28", "29", "30", "46", "48", "50", "52", "54", "56", "58", "60", "90", "94", "98", "102", "106", "110", "114", "118"];  
-
     return (
         <div>
             {gender === "men" && (
@@ -32,7 +29,7 @@ const SizingSelect = ({ gender, handleSizeSelectionWithState, selectedSize }) =>
     )
 }
 
-const SizeButtons = ({ gender, region, handleSizeSelection }) => {
+const SizeButtons = ({ gender, region, handleSizeSelection, selectedTab }) => {
     const [selectedSize, setSelectedSize] = useState(null);
 
     const handleSizeSelectionWithState = (s) => {
@@ -41,7 +38,7 @@ const SizeButtons = ({ gender, region, handleSizeSelection }) => {
     };
     
     return (
-        <div className="buttons-container">
+        <div className={`buttons-container ${(selectedTab === 0) && gender === "women" ? "expandedTab1" : ""}`}>
             <SizingSelect
             gender={gender}
             region={region}

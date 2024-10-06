@@ -32,16 +32,22 @@
 .card {
     background: linear-gradient(145deg, rgb(205, 228, 225), rgb(189, 223, 224)); 
     box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.2);
-    transition: transform 0.8s ease, box-shadow 0.8s ease;
+    transition: transform 0.8s ease, box-shadow 0.8s ease, height 2.5s ease, width 0.5s;
     transform-style: preserve-3d;
     transform: rotateX(1deg) rotateY(1deg);
     border-radius: 12px;
     min-height: 300px;
     width: 600px;
+    overflow: hidden;
+    max-height: 650px;
 
     &:hover {
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.05);
         transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    &.expanded {
+        max-height: 800px;
     }
 
     &__header {

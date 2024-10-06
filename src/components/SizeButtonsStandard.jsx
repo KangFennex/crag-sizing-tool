@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Button } from "@nextui-org/react";
+import { sizeKid, sizeKidEu, sizeWomenTops, sizeWomenTopsEu, sizeWomenBottoms, sizeWomenBottomsEu, sizeMenTops, sizeMenTopsEu, sizeMenBottoms, sizeMenBottomsEu } from "../assets/SizingData";
 
 const renderSizeButtons = (sizes, handleSizeSelectionWithState, selectedSize) => {
     return sizes.map((sizeEl, i) => (
@@ -15,21 +16,6 @@ const renderSizeButtons = (sizes, handleSizeSelectionWithState, selectedSize) =>
 }
 
 const SizingSelect = ({ gender, region, kid, garment, handleSizeSelectionWithState, selectedSize }) => {
-
-    const sizeKid = ["3-4", "5-6", "7-8", "9-10", "11-12", "13"]
-    const sizeKidEu = ["104", "116", "128", "140", "152", "158"]
-
-    const sizeWomenTops = ["6", "8", "10", "12", "14", "16", "18", "20", "22", "24"];
-    const sizeWomenTopsEu = ["32", "34", "36", "38", "40", "42", "44", "46", "48", "50"]
-
-    const sizeWomenBottoms = ["6", "8", "10", "12", "14", "16", "18", "20", "22", "24"];
-    const sizeWomenBottomsEu = ["32", "34", "36", "38", "40", "42", "44", "46", "48", "50"];
-
-    const sizeMenTops = ["XS", "S", "M", "L", "XL", "XXL", "3XL", "4XL"];
-    const sizeMenTopsEu = ["46", "48", "50", "52-54", "56", "58", "60-62", "64"]
-
-    const sizeMenBottoms = ["28", "30", "32", "34", "36", "38", "40", "42", "44"];
-    const sizeMenBottomsEu = ["44", "46", "48", "50", "52", "54", "56", "58", "60"]
 
     return (
         <div>
@@ -52,7 +38,7 @@ const SizingSelect = ({ gender, region, kid, garment, handleSizeSelectionWithSta
     )
 }
 
-const SizeButtonsStandard = ({ gender, region, kid, garment, handleSizeSelection }) => {
+const SizeButtonsStandard = ({ gender, region, kid, garment, handleSizeSelection, selectedTab }) => {
     const [selectedSize, setSelectedSize] = useState(null);
 
     const handleSizeSelectionWithState = (s) => {
@@ -61,7 +47,7 @@ const SizeButtonsStandard = ({ gender, region, kid, garment, handleSizeSelection
     };
     
     return (
-        <div className="buttons-container">
+        <div className={`buttons-container ${selectedTab === 1 ? "selectedTab2" : ""}`}>
             <SizingSelect
             kid={kid}
             garment={garment}

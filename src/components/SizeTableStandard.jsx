@@ -55,10 +55,10 @@ function SizeTableStandard({ kid, size, gender, garment }) {
   };
 
   return (
-    <div className="size-table-container">
+    <div className={`size-table-container selectedTab2 ${gender === "women" || garment || kid ? "expandedTab2" : ""}`}>
       <div>
       <h4>{chartTitle(gender, kid)} Sizing Chart</h4>
-        <table className="size-table-container__table">
+        <table className={"size-table-container__table"}>
           <thead>
             <tr className="first-row">
               <th>Measure</th>

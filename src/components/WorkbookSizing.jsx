@@ -2,7 +2,7 @@
 import SizeButtonsStandard from './SizeButtonsStandard'
 import SizeTableStandard from './SizeTableStandard'
 
-function WorkbookSizing({ gender, size, region, kid, garment, handleSizeSelection }) {
+function WorkbookSizing({ gender, size, region, kid, garment, handleSizeSelection, selectedTab }) {
   return (
     <div>
       <section className='buttons'>
@@ -12,6 +12,7 @@ function WorkbookSizing({ gender, size, region, kid, garment, handleSizeSelectio
         kid={kid}
         garment={garment}
         handleSizeSelection={handleSizeSelection}
+        selectedTab={selectedTab}
       />
       </section>
       <section>
@@ -21,6 +22,7 @@ function WorkbookSizing({ gender, size, region, kid, garment, handleSizeSelectio
         kid={kid}
         garment={garment}
         size={size}
+        selectedTab={selectedTab}
       />
       </section>
     </div>

@@ -14,7 +14,7 @@ function standardSizeCategories(gender, garment) {
                 case "tops":
                     return ["Chest (inch)", "Chest (cm)", "US Sizing", "EU Sizing", "FR Sizing"];
                 case "bottoms":
-                    return ["Waist (inch)", "Waist (cm)", "Eu Sizing", "FR Sizing"];
+                    return ["Waist (inch)", "Waist (cm)", "EU Sizing", "FR Sizing"];
             }
             break;
     }
@@ -30,6 +30,25 @@ function nosilifeSizeCategories(gender) {
             return ["Waist (inch)", "Waist (cm)", "Leg length (inch)", "Leg length (cm)", "UK/US Sizing", "FR Sizing"];
     }
 }
+
+const sizeNosilifeWomen = ["16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "32", "34", "36", "38", "40", "42", "44", "46", "48", "50", "52", "64", "68", "72", "76", "80", "84", "88", "92", "96", "100", "104"];
+
+const sizeNosilifeMen = ["23", "24", "25", "26", "27", "28", "29", "30", "46", "48", "50", "52", "54", "56", "58", "60", "90", "94", "98", "102", "106", "110", "114", "118"];  
+
+const sizeKid = ["3-4", "5-6", "7-8", "9-10", "11-12", "13"]
+const sizeKidEu = ["104", "116", "128", "140", "152", "158"]
+
+const sizeWomenTops = ["6", "8", "10", "12", "14", "16", "18", "20", "22", "24"];
+const sizeWomenTopsEu = ["32", "34", "36", "38", "40", "42", "44", "46", "48", "50"]
+
+const sizeWomenBottoms = ["6", "8", "10", "12", "14", "16", "18", "20", "22", "24"];
+const sizeWomenBottomsEu = ["32", "34", "36", "38", "40", "42", "44", "46", "48", "50"];
+
+const sizeMenTops = ["XS", "S", "M", "L", "XL", "XXL", "3XL", "4XL"];
+const sizeMenTopsEu = ["46", "48", "50", "52-54", "56", "58", "60-62", "64"]
+
+const sizeMenBottoms = ["28", "30", "32", "34", "36", "38", "40", "42", "44"];
+const sizeMenBottomsEu = ["44", "46", "48", "50", "52", "54", "56", "58", "60"]
 
 
 function nosilifeWomenSizing(size) {
@@ -333,4 +352,4 @@ function getSizingSpecifications(gender, garment, size) {
 }
 
 
-export { nosilifeWomenSizing, nosilifeMenSizing, getSizingSpecifications, getKidSizing, standardSizeCategories, kidSizeCategories, nosilifeSizeCategories }
+export { nosilifeWomenSizing, nosilifeMenSizing, getSizingSpecifications, getKidSizing, standardSizeCategories, kidSizeCategories, nosilifeSizeCategories, sizeNosilifeWomen, sizeNosilifeMen, sizeKid, sizeKidEu, sizeWomenTops, sizeWomenTopsEu, sizeWomenBottoms, sizeWomenBottomsEu, sizeMenTops, sizeMenTopsEu, sizeMenBottoms, sizeMenBottomsEu }

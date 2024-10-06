@@ -25,8 +25,8 @@ const ToggleSwitch = ({ isChecked, handleToggle, icon1, icon2 }) => {
 
     return (
         <div className="icon-toggle-container">
-            {Icon1 && <Icon1 size={25} />} 
-            <div className="toggle-container flex flex-col">
+            {Icon1 && <Icon1 size={25} color={isChecked ? "" : "darkturquoise"} />} 
+            <div className="toggle-container">
                 <label className="switch">
                     <input
                         type="checkbox"
@@ -37,7 +37,7 @@ const ToggleSwitch = ({ isChecked, handleToggle, icon1, icon2 }) => {
                     <span className="slider"></span>
                 </label>
             </div>
-            {Icon1 && <Icon2 size={25}/>} 
+            {Icon1 && <Icon2 size={25} color={isChecked ? "darkturquoise" : ""}/>} 
         </div>
     );
 };

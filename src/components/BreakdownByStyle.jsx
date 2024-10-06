@@ -62,7 +62,7 @@ function BreakdownByStyle() {
     };
 
     return (
-        <div className="size-table-container">
+        <div className={`size-table-container selectedTab3 ${selectedStyle ? "expandedTab3" : ""}`}>
             <div>
                 <section>
                     <div>

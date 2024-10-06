@@ -158,6 +158,8 @@ function App() {
           <div className="card__footer">
             <a
               href="https://www.craghoppers.com"
+              target="_blank" 
+              rel="noopener noreferrer"
             >
               Visit our Craghoppers B2B
             </a>

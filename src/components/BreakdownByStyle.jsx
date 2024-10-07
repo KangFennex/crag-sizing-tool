@@ -7,7 +7,7 @@ import { MdRefresh } from 'react-icons/md';
 
 
 const StylesDropdown = ({ styleOptions, handleSelect }) => {
-    
+
     const onInputChange = (value) => {
         const selectedId = styleOptions.find((style) => style.value === value)
         handleSelect(selectedId?.id);
@@ -44,7 +44,7 @@ const StylesDropdown = ({ styleOptions, handleSelect }) => {
                 defaultItems={styleOptions}
                 onInputChange={onInputChange}
             >
-            {styleOptions.map((item) => <AutocompleteItem key={item.value}>{item.name}</AutocompleteItem>)}
+                {styleOptions.map((item) => <AutocompleteItem key={item.value}>{item.name}</AutocompleteItem>)}
             </Autocomplete>
 
         </>
@@ -53,6 +53,7 @@ const StylesDropdown = ({ styleOptions, handleSelect }) => {
 
 function BreakdownByStyle() {
     const [selectedStyle, setSelectedStyle] = useState('');
+    const [isHovered, setIsHovered] = useState(false);
 
     const handleRefresh = () => {
         setSelectedStyle('');
@@ -70,9 +71,16 @@ function BreakdownByStyle() {
                     <div>
                         <MdRefresh
                             size={30}
+                            color={isHovered ? "cadetblue" : "darkturquoise"}
+                            onMouseEnter={() => setIsHovered(true)}
+                            onMouseLeave={() => setIsHovered(false)}
                             onClick={() => handleRefresh()}
-                            className='breakdown-refresh' 
-                            />
+                            style={{
+                                transition: "all 0.5s ease",
+                                transform: isHovered ? "rotate(360deg) scale(1.1)" : "rotate(0deg) scale(1)",
+                            }}
+                            className="breakdown-refresh"
+                        />
                         <div className='style-select'>
                             <StylesDropdown styleOptions={styles} handleSelect={handleSelect} />
                         </div>

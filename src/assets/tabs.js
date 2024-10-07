@@ -2,11 +2,11 @@ const tabs = [
     {
         tab: 1,
         title: 
-        "Working Sizing - Nosi Legwear"
+        "Workook Sizing - Nosi Legwear"
     },
     {
         tab: 2,
-        title: "Working Sizing General"
+        title: "Workook Sizing - General"
     },
     {
         tab: 3,

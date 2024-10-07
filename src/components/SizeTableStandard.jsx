@@ -7,7 +7,6 @@ function SizeTableStandard({ kid, size, gender, garment }) {
   const selectedCategories = (kid, gender, garment) => {
     if (kid) {
       return kidSizeCategories
-      /* This needs to be fixed: check what is neg and pos */
     } else if (!kid && gender === "women" && garment) {
       return standardSizeCategories("women", "tops")
     } else if (!kid && gender === "women" && !garment) {
@@ -57,11 +56,11 @@ function SizeTableStandard({ kid, size, gender, garment }) {
   const getExpandedClass = (kid, gender, garment) => {
     if (kid) {
       return "expanded";
-    } else if (gender === "women" && !garment) {
+    } else if (!kid && gender === "women" && !garment) {
       return "expanded";
-    } else if (gender === "women" && garment) {
+    } else if (!kid && gender === "women" && garment) {
       return "expanded";
-    } else if (gender === "men" && garment) {
+    } else if (!kid && gender === "men" && garment) {
       return "expanded"; 
     } else {
       return "";

@@ -71,7 +71,7 @@ function BreakdownByStyle() {
                     <div>
                         <MdRefresh
                             size={30}
-                            color={isHovered ? "cadetblue" : "darkturquoise"}
+                            color="darkturquoise"
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}
                             onClick={() => handleRefresh()}

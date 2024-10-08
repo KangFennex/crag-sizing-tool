@@ -70,9 +70,9 @@ function App() {
   }
 
   const handleSetKid = () => {
-    setKid(!kid);
-    setGender("men");
     setGarment(false);
+    setGender("men");
+    setKid(!kid);
   }
 
 
@@ -101,7 +101,7 @@ function App() {
       </div>
       <section className='card-container'>
         <nav
-          className={`card ${gender === "women" ? "expanded" : ""}`}
+          className={`card ${selectedTab === 3 ? "expanded" : ""}`}
           >
           <div className="card__header">
             <img

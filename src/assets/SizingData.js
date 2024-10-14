@@ -235,6 +235,7 @@ function getSizingSpecifications(gender, garment, size) {
                         case "20":
                             return ["45", "114", "3XL/16", "46", "48"];
                         case "48":
+                        case "22":
                             return ["47", "119", "4XL/18", "48", "50"];
                         case "50":
                         case "24":

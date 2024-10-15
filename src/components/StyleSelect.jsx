@@ -11,7 +11,13 @@ function StyleSelect({ selectedTab, gender, garment, kid, region, handleSetGende
                     handleToggle={handleSetGender}
                     icon1="men"
                     icon2="women"
-                    disabled={kid} 
+                    disabled={kid}
+                />
+                <ToggleSwitch
+                    isChecked={region}
+                    handleToggle={handleSetRegion}
+                    icon1="EU"
+                    icon2="UK"
                 />
                 {(selectedTab === 1) && (
                     <>
@@ -21,12 +27,6 @@ function StyleSelect({ selectedTab, gender, garment, kid, region, handleSetGende
                             icon1="trousers"
                             icon2="shirt"
                             disabled={kid}
-                        />
-                        <ToggleSwitch
-                            isChecked={region}
-                            handleToggle={handleSetRegion}
-                            icon1="EU"
-                            icon2="UK"
                         />
                         <ToggleSwitch
                             isChecked={kid}

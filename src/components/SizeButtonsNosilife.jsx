@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Button } from "@nextui-org/react";
-import { sizeNosilifeWomen, sizeNosilifeMen } from "../assets/SizingData"
+import { sizeNosilifeWomen, sizeNosilifeWomenUK, sizeNosilifeMen, sizeNosilifeMenUK } from "../assets/SizingData"
 
 const renderSizeButtons = (sizes, handleSizeSelectionWithState, selectedSize) => {
     return sizes.map((sizeEl, i) => (
@@ -15,15 +15,15 @@ const renderSizeButtons = (sizes, handleSizeSelectionWithState, selectedSize) =>
     ))
 }
 
-const SizingSelect = ({ gender, handleSizeSelectionWithState, selectedSize }) => {
+const SizingSelect = ({ gender, region, handleSizeSelectionWithState, selectedSize }) => {
 
     return (
         <div>
             {gender === "men" && (
-                renderSizeButtons(sizeNosilifeMen, handleSizeSelectionWithState, selectedSize)
+                renderSizeButtons(region ? sizeNosilifeMenUK : sizeNosilifeMen, handleSizeSelectionWithState, selectedSize)
             )}
             {gender === "women" && (
-                renderSizeButtons(sizeNosilifeWomen, handleSizeSelectionWithState, selectedSize)
+                renderSizeButtons(region? sizeNosilifeWomenUK : sizeNosilifeWomen, handleSizeSelectionWithState, selectedSize)
             )}
         </div>
     )

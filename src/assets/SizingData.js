@@ -25,15 +25,28 @@ const kidSizeCategories = ["Height (inch)", "Height (cm)", "Chest (inch)", "Ches
 function nosilifeSizeCategories(gender) {
     switch (gender) {
         case "women":
-            return ["Waist (inch)", "Waist (cm)", "Hip (inch)", "Hip (cm)", "Leg length (inch)", "Leg length (cm)", "UK Sizing", "US Sizing", "FR Sizing"];
+            return ["Waist (inch)", "Waist (cm)", "Hip (inch)", "Hip (cm)", "Leg length (inch)", "Leg length (cm)", "Nosi Sizing", "UK Sizing", "US Sizing", "FR Sizing"];
         case "men":
-            return ["Waist (inch)", "Waist (cm)", "Leg length (inch)", "Leg length (cm)", "UK/US Sizing", "FR Sizing"];
+            return ["Waist (inch)", "Waist (cm)", "Leg length (inch)", "Leg length (cm)", "Nosi Sizing", "UK/US Sizing", "FR Sizing"];
     }
 }
 
 const sizeNosilifeWomen = ["16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "32", "34", "36", "38", "40", "42", "44", "46", "48", "50", "52", "64", "68", "72", "76", "80", "84", "88", "92", "96", "100", "104"];
 
-const sizeNosilifeMen = ["23", "24", "25", "26", "27", "28", "29", "30", "46", "48", "50", "52", "54", "56", "58", "60", "90", "94", "98", "102", "106", "110", "114", "118"];  
+const sizeNosilifeWomenUK = [
+    "8S", "9S", "10S", "11S", "12S", "14S", "16S", "18S", "20S", "22S", "24S",
+    "8R", "9R", "10R", "11R", "12R", "14R", "16R", "18R", "20R", "22R",
+    "8L", "9L", "10L", "11L", "12L", "14L", "16L", "18L", "20L", "22L", "24L"
+];
+
+const sizeNosilifeMen = ["23", "24", "25", "26", "27", "28", "29", "30", "46", "48", "50", "52", "54", "56", "58", "60", "90", "94", "98", "102", "106", "110", "114", "118"];
+
+const sizeNosilifeMenUK = [
+    "30S", "32S", "34S", "36S", "38S", "40S", "42S", "44S",
+    "30R", "32R", "34R", "36R", "38R", "40R", "42R", "44R",
+    "30L", "32L", "34L", "36L", "38L", "40L", "42L", "44L"
+];
+
 
 const sizeKid = ["3-4", "5-6", "7-8", "9-10", "11-12", "13"]
 const sizeKidEu = ["104", "116", "128", "140", "152", "158"]
@@ -54,126 +67,183 @@ const sizeMenBottomsEu = ["44", "46", "48", "50", "52", "54", "56", "58", "60"]
 function nosilifeWomenSizing(size) {
     switch (size) {
         case "16":
-            return ["26", "66", "35", "89", "30", "76", "8S", "XS/4S", "34S"];
+        case "8S":
+            return ["26", "66", "35", "89", "30", "76", "16", "8 S", "XS/4S", "34 S"];
         case "17":
-            return ["27", "69", "36", "91", "30", "76", "9S", "XS-S/5S", "36S"];
+        case "9S":
+            return ["27", "69", "36", "91", "30", "76", "17", "9 S", "XS-S/5S", "36 S"];
         case "18":
-            return ["28", "71", "37", "94", "30", "76", "10S", "S/6S", "38S"];
+        case "10S":
+            return ["28", "71", "37", "94", "30", "76", "18", "10 S", "S/6S", "38 S"];
         case "19":
-            return ["29", "74", "38", "97", "30", "76", "11S", "S-M/7R", "40S"];
-        case "20":
-            return ["30", "76", "39", "99", "30", "76", "12S", "M/8S", "42S"];
+        case "11S":
+            return ["29", "74", "38", "97", "30", "76", "19", "11 S", "S-M/7R", "40 S"];
+        case "12S":
+            return ["30", "76", "39", "99", "30", "76", "20", "12 S", "M/8S", "42 S"];
         case "21":
-            return ["32", "81", "41", "104", "30", "76", "14S", "L/10S", "44S"];
+        case "14S":
+            return ["32", "81", "41", "104", "30", "76", "21", "14 S", "L/10S", "44 S"];
         case "22":
-            return ["34", "86", "43", "109", "30", "76", "16S", "XL/12S", "46S"];
+        case "16S":
+            return ["34", "86", "43", "109", "30", "76", "22", "16 S", "XL/12S", "46 S"];
         case "23":
-            return ["36", "91", "45", "114", "30", "76", "18S", "XXL/14S", "48S"];
+        case "18S":
+            return ["36", "91", "45", "114", "30", "76", "23", "18 S", "XXL/14S", "48 S"];
         case "24":
-            return ["38", "97", "47", "119", "30", "76", "20S", "3XL/16S", "50S"];
+        case "20S":
+            return ["38", "97", "47", "119", "30", "76", "24", "20 S", "3XL/16S", "50 S"];
         case "25":
-            return ["40", "102", "49", "124", "30", "76", "22S", "4XL/18S", "52S"];
+        case "22S":
+            return ["40", "102", "49", "124", "30", "76", "25", "22 S", "4XL/18S", "52 S"];
         case "26":
-            return ["42", "107", "51", "130", "30", "76", "24S", "5XL/20S", "54S"];
+        case "24S":
+            return ["42", "107", "51", "130", "30", "76", "26", "24 S", "5XL/20S", "54 S"];
         case "32":
-            return ["26", "66", "35", "89", "32", "81", "8R", "XS/4R", "34R"];
+        case "8R":
+            return ["26", "66", "35", "89", "32", "81", "32", "8 R", "XS/4R", "34 R"];
         case "34":
-            return ["27", "69", "36", "91", "32", "81", "9R", "XS-S/5R", "36R"];
+        case "9R":
+            return ["27", "69", "36", "91", "32", "81", "34", "9 R", "XS-S/5R", "36 R"];
         case "36":
-            return ["28", "71", "37", "94", "32", "81", "10R", "S/6R", "38R"];
+        case "10R":
+            return ["28", "71", "37", "94", "32", "81", "36", "10 R", "S/6R", "38 R"];
         case "38":
-            return ["29", "74", "38", "97", "32", "81", "11R", "S-M/7R", "40R"];
+        case "11R":
+            return ["29", "74", "38", "97", "32", "81", "38", "11 R", "S-M/7R", "40 R"];
         case "40":
-            return ["30", "76", "39", "99", "32", "81", "12R", "M/8R", "42R"];
+        case "12R":
+            return ["30", "76", "39", "99", "32", "81", "40", "12 R", "M/8R", "42 R"];
         case "42":
-            return ["32", "81", "41", "104", "32", "81", "14R", "L/10R", "44R"];
+        case "14R":
+            return ["32", "81", "41", "104", "32", "81", "42", "14 R", "L/10R", "44 R"];
         case "44":
-            return ["32", "81", "41", "104", "32", "81", "14R", "L/10R", "44R"];
+        case "16R":
+            return ["32", "81", "41", "104", "32", "81", "44", "16 R", "L/10R", "44 R"];
         case "46":
-            return ["34", "86", "43", "109", "32", "81", "16R", "XL/12R", "46R"];
+        case "18R":
+            return ["34", "86", "43", "109", "32", "81", "46", "18 R", "XL/12R", "46 R"];
         case "48":
-            return ["36", "91", "45", "114", "32", "81", "18R", "XXL/14R", "48R"];
+        case "20R":
+            return ["36", "91", "45", "114", "32", "81", "48", "20 R", "XXL/14R", "48 R"];
         case "50":
-            return ["38", "97", "47", "119", "32", "81", "20R", "3XL/16R", "50R"];
+        case "22R":
+            return ["38", "97", "47", "119", "32", "81", "50", "22 R", "3XL/16R", "50 R"];
         case "52":
-            return ["40", "102", "49", "124", "32", "81", "22R", "4XL/18R", "52R"];
+        case "24R":
+            return ["40", "102", "49", "124", "32", "81", "52", "24 R", "4XL/18R", "52 R"];
         case "64":
-            return ["26", "66", "35", "89", "34", "86", "8L", "XS/4L", "34L"];
+        case "8L":
+            return ["26", "66", "35", "89", "34", "86", "64", "8 L", "XS/4L", "34 L"]; 
         case "68":
-            return ["27", "69", "36", "91", "34", "86", "9L", "XS-S/5L", "36L"];
+        case "9L":
+            return ["27", "69", "36", "91", "34", "86", "68", "9 L", "XS-S/5L", "36 L"];
         case "72":
-            return ["28", "71", "37", "94", "34", "86", "10L", "S/6L", "38L"];
+        case "10L":
+            return ["28", "71", "37", "94", "34", "86", "72", "10 L", "S/6L", "38 L"];
         case "76":
-            return ["29", "74", "38", "97", "34", "86", "11L", "S-M/7L", "40L"];
+        case "11L":
+            return ["29", "74", "38", "97", "34", "86", "76", "11 L", "S-M/7L", "40 L"];
         case "80":
-            return ["30", "76", "39", "99", "34", "86", "12L", "M/8L", "42L"];
+        case "12L":
+            return ["30", "76", "39", "99", "34", "86", "80", "12 L", "M/8L", "42 L"];
         case "84":
-            return ["32", "81", "41", "104", "34", "86", "14L", "L/10L", "44L"];
+        case "14L":
+            return ["32", "81", "41", "104", "34", "86", "84", "14 L", "L/10L", "44 L"];
         case "88":
-            return ["34", "86", "43", "109", "34", "86", "16L", "XL/12L", "46L"];
+        case "16L":
+            return ["34", "86", "43", "109", "34", "86", "88", "16 L", "XL/12L", "46 L"];
         case "92":
-            return ["36", "91", "45", "114", "34", "86", "18L", "XXL/14L", "48L"];
+        case "18L":
+            return ["36", "91", "45", "114", "34", "86", "92", "18 L", "XXL/14L", "48 L"];
         case "96":
-            return ["38", "97", "47", "119", "34", "86", "20L", "3XL/16L", "50L"];
+        case "20L":
+            return ["38", "97", "47", "119", "34", "86", "96", "20 L", "3XL/16L", "50 L"];
         case "100":
-            return ["40", "102", "49", "124", "34", "86", "22L", "4XL/18L", "52L"];
+        case "22L":
+            return ["40", "102", "49", "124", "34", "86", "100", "22 L", "4XL/18L", "52 L"];
         case "104":
-            return ["42", "107", "51", "130", "34", "86", "24L", "5XL/20L", "54L"];
+        case "24L":
+            return ["42", "107", "51", "130", "34", "86", "104", "24 L", "5XL/20L", "54 L"];
         default:
             return [];
     }
 }
 
+
 function nosilifeMenSizing(size) {
     switch (size) {
         case "23":
-            return ["32", "81", "30", "76", "30S", "40S"];
+        case "30S":
+            return ["32", "81", "30", "76", "23", "30 S", "40 S"];
         case "24":
-            return ["34", "86", "30.5", "77", "32S", "42S"];
+        case "32S":
+            return ["34", "86", "30.5", "77", "24", "32 S", "42 S"];
         case "25":
-            return ["36", "91", "30.5", "77", "34S", "44S"];
+        case "34S":
+            return ["36", "91", "30.5", "77", "25", "34 S", "44 S"];
         case "26":
-            return ["38", "97", "31", "79", "36S", "46S"];
+        case "36S":
+            return ["38", "97", "31", "79", "26", "36 S", "46 S"];
         case "27":
-            return ["40", "102", "31", "79", "38S", "48S"];
+        case "38S":
+            return ["40", "102", "31", "79", "27", "38 S", "48 S"];
         case "28":
-            return ["42", "107", "31.5", "80", "40S", "50S"];
+        case "40S":
+            return ["42", "107", "31.5", "80", "28", "40 S", "50 S"];
         case "29":
-            return ["44", "112", "31.5", "80", "42S", "52S"];
+        case "42S":
+            return ["44", "112", "31.5", "80", "29", "42 S", "52 S"];
         case "30":
-            return ["46", "117", "32", "81", "44S", "54S"];
+        case "44S":
+            return ["46", "117", "32", "81", "30", "44 S", "54 S"];
         case "46":
-            return ["32", "81", "32", "81", "30R", "40R"];
+        case "30R":
+            return ["32", "81", "32", "81", "46", "30 R", "40 R"];
         case "48":
-            return ["34", "86", "32.5", "83", "32R", "42R"];
+        case "32R":
+            return ["34", "86", "32.5", "83", "48", "32 R", "42 R"];
         case "50":
-            return ["36", "91", "32.5", "83", "34R", "44R"];
+        case "34R":
+            return ["36", "91", "32.5", "83", "50", "34 R", "44 R"];
         case "52":
-            return ["38", "97", "33", "84", "36R", "46R"];
+        case "36R":
+            return ["38", "97", "33", "84", "52", "36 R", "46 R"];
         case "54":
-            return ["40", "102", "33", "84", "38R", "48R"];
+        case "38R":
+            return ["40", "102", "33", "84", "54", "38 R", "48 R"];
         case "56":
-            return ["42", "107", "33.5", "85", "40R", "50R"];
+        case "40R":
+            return ["42", "107", "33.5", "85", "56", "40 R", "50 R"];
         case "58":
-            return ["44", "112", "33.5", "85", "42R", "52R"];
+        case "42R":
+            return ["44", "112", "33.5", "85", "58", "42 R", "52 R"];
         case "60":
-            return ["46", "117", "34", "86", "44R", "54R"];
+        case "44R":
+            return ["46", "117", "34", "86", "60", "44 R", "54 R"];
         case "90":
-            return ["32", "81", "34", "86", "30L", "40L"];
+        case "30L":
+            return ["32", "81", "34", "86", "90", "30 L", "40 L"];
         case "94":
-            return ["34", "86", "34.5", "88", "32L", "42L"];
+        case "32L":
+            return ["34", "86", "34.5", "88", "94", "32 L", "42 L"];
         case "98":
-            return ["36", "91", "34.5", "88", "34L", "44L"];
+        case "34L":
+            return ["36", "91", "34.5", "88", "98", "34 L", "44 L"];
         case "102":
-            return ["38", "97", "35", "89", "36L", "46L"];
+        case "36L":
+            return ["38", "97", "35", "89", "102", "36 L", "46 L"];
         case "106":
-            return ["40", "102", "35", "89", "38L", "48L"];
+        case "38L":
+            return ["40", "102", "35", "89", "106", "38 L", "48 L"];
         case "110":
-            return ["42", "107", "35.5", "90", "40L", "50L"];
+        case "40L":
+            return ["42", "107", "35.5", "90", "110", "40 L", "50 L"];
         case "114":
-            return ["44", "112", "35.5", "90", "42L", "52L"];
+        case "42L":
+            return ["44", "112", "35.5", "90", "114", "42 L", "52 L"];
         case "118":
-            return ["46", "117", "36", "91", "44L", "54L"];
+        case "44L":
+            return ["46", "117", "36", "91", "118", "44 L", "54 L"];
         default:
             return [];
     }
@@ -353,4 +423,4 @@ function getSizingSpecifications(gender, garment, size) {
 }
 
 
-export { nosilifeWomenSizing, nosilifeMenSizing, getSizingSpecifications, getKidSizing, standardSizeCategories, kidSizeCategories, nosilifeSizeCategories, sizeNosilifeWomen, sizeNosilifeMen, sizeKid, sizeKidEu, sizeWomenTops, sizeWomenTopsEu, sizeWomenBottoms, sizeWomenBottomsEu, sizeMenTops, sizeMenTopsEu, sizeMenBottoms, sizeMenBottomsEu }
+export { nosilifeWomenSizing, nosilifeMenSizing, getSizingSpecifications, getKidSizing, standardSizeCategories, kidSizeCategories, nosilifeSizeCategories, sizeNosilifeWomen, sizeNosilifeWomenUK, sizeNosilifeMen, sizeNosilifeMenUK, sizeKid, sizeKidEu, sizeWomenTops, sizeWomenTopsEu, sizeWomenBottoms, sizeWomenBottomsEu, sizeMenTops, sizeMenTopsEu, sizeMenBottoms, sizeMenBottomsEu }
